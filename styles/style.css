@@ -417,9 +417,6 @@
 @media (min-width: 500px) {
   .footer__remember-btn {
     min-width: 335px;
-  }
-
-  .footer__remember-btn {
     flex-direction: row;
     justify-content: center;
   }
