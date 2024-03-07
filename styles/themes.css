@@ -4,3 +4,114 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+:root.theme-dark {
+  --title-card-font-weight: 785;
+  --text-card-font-weight: 465;
+  --text-color: #00cc14;
+  --accent-color: #00cc14;
+  --background-color: #000;
+  --background-gradient: repeating-linear-gradient(
+      90deg,
+      #000,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #000,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#007f0c, #004306);
+  --btn-color-diff: #00cc14;
+  --heart-icon-stroke: #00cc14;
+  --heart-icon-fill-red: #ff0000;
+}
+
+:root.theme-light {
+  --accent-font-family: "PressStart2P-Regular";
+  --main-font-family: "Inter-Variable";
+  --title-card-font-weight: 700;
+  --text-card-font-weight: 400;
+  --text-color: #000;
+  --accent-color: #000;
+  --background-color: #fff;
+  --background-gradient: repeating-linear-gradient(
+      90deg,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#e7e7e7, #1a1a1a);
+  --btn-color-diff: #fff;
+  --heart-icon-stroke: #000;
+  --heart-icon-fill-red: #ff0000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --title-card-font-weight: 785;
+    --text-card-font-weight: 465;
+    --text-color: #00cc14;
+    --accent-color: #00cc14;
+    --background-color: #000;
+    --background-gradient: repeating-linear-gradient(
+        90deg,
+        #000,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        #000,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(#007f0c, #004306);
+    --btn-color-diff: #00cc14;
+    --heart-icon-stroke: #00cc14;
+    --heart-icon-fill-red: #ff0000;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-font-family: "PressStart2P-Regular";
+    --main-font-family: "Inter-Variable";
+    --title-card-font-weight: 700;
+    --text-card-font-weight: 400;
+    --text-color: #000;
+    --accent-color: #000;
+    --background-color: #fff;
+    --background-gradient: repeating-linear-gradient(
+        90deg,
+        #d3d3d3,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        #d3d3d3,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(#e7e7e7, #1a1a1a);
+    --btn-color-diff: #fff;
+    --heart-icon-stroke: #000;
+    --heart-icon-fill-red: #ff0000;
+  }
+}
