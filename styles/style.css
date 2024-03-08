@@ -29,21 +29,15 @@
 }
 
 .header {
-  font-family: var(--accent-font-family, sans-serif);
+  font-family: var(--accent-font-family, fantasy);
   text-transform: uppercase;
   margin-block-end: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  min-height: 327px;
   grid-column: 2;
-}
-
-@media (min-width: 500px) {
-  .header {
-    min-height: 368px;
-  }
+  padding-block-start: clamp(7.5rem, 1.502vw + 7.148rem, 8.5rem);
 }
 
 .block-decor {
@@ -51,11 +45,11 @@
   background-color: var(--background-color);
 }
 
-.header__title {
+.header__text {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
-.header__subtitle {
+.header__title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   padding-block-start: 20px;
 }
@@ -83,15 +77,6 @@
   top: 0;
   left: -13px;
   animation: arrow 0.5s infinite ease-in-out alternate-reverse;
-}
-
-@keyframes arrow {
-  0% {
-    left: -13px;
-  }
-  100% {
-    left: -9px;
-  }
 }
 
 .theme-menu__button:disabled {
@@ -189,13 +174,21 @@
 
 .card__img-watermark {
   position: absolute;
-  top: 25px;
+  top: 27px;
   right: 11px;
+  text-align: right;
   z-index: 1;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family, fantasy);
+  text-transform: uppercase;
   text-shadow: 1px var(--background-color);
   color: var(--text-color);
   opacity: 50%;
+}
+
+@media (min-width: 500px){
+  .card__img-watermark {
+    right: 25px;
+  }
 }
 
 @supports (
@@ -208,11 +201,8 @@
   }
 }
 
-.card__text-wrapper {
+.card__text-items {
   padding: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
   font-size: 18px;
 }
 
@@ -226,9 +216,10 @@
 
 .card__buttons {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
   gap: 5px;
+  padding: 0 25px 25px;
 }
 
 .card__icon-button {
@@ -236,6 +227,7 @@
   cursor: pointer;
   border: 2px solid transparent;
   padding: 0;
+  line-height: 0;
 }
 
 .card__icon-button:focus {
@@ -243,16 +235,14 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: none;
-  border-color: #000;
-  transition: border 0.3s ease;
+  border: 2px solid #000;
 }
 
 .card__like-button {
-  font-family: var(--accent-font-family, sans-serif);
+  font-family: var(--accent-font-family, fantasy);
   font-size: 14px;
   line-height: 13px;
-  padding-block: 14px;
+  padding-block: 12px;
   min-width: 130px;
   cursor: pointer;
   position: relative;
@@ -324,28 +314,10 @@
   transform-origin: center;
 }
 
-@keyframes heart-tab-scale {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.5);
-  }
-}
-
 .like-icon.is-liked .sparks {
   animation: heart-tab-sparks 0.3s ease-in alternate-reverse;
   animation-delay: 0.3s;
   transform-origin: center;
-}
-
-@keyframes heart-tab-sparks {
-  0% {
-    fill: none;
-  }
-  100% {
-    fill: var(--heart-icon-fill-red);
-  }
 }
 
 .hover-btn-animation:focus {
@@ -403,7 +375,7 @@
 .footer__remember-btn {
   min-width: 306px;
   margin: 0 auto;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family, fantasy);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -452,17 +424,8 @@
   animation: dialog-open 0.7s ease normal;
 }
 
-@keyframes dialog-open {
-  from {
-    transform: scale(0.8);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
 .footer__dialog-text {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family, fantasy);
   color: var(--text-color);
   display: grid;
   align-items: center;
@@ -479,12 +442,12 @@
 }
 
 .footer__dialog-btn {
-  font-family: var(--accent-font-family);
-  color: var(--text-color);
+  font-family: var(--accent-font-family, fantasy);
   text-transform: uppercase;
   padding-block: 13px;
   position: relative;
   cursor: pointer;
+  width: 100%;
 }
 
 .footer__dialog::backdrop {

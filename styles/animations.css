@@ -12,3 +12,39 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes arrow {
+    0% {
+        left: -13px;
+    }
+    100% {
+        left: -9px;
+    }
+}
+
+@keyframes heart-tab-scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes heart-tab-sparks {
+    0% {
+        fill: none;
+    }
+    100% {
+        fill: var(--heart-icon-fill-red);
+    }
+}
+
+@keyframes dialog-open {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
