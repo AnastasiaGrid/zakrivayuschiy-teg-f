@@ -185,7 +185,7 @@
   opacity: 50%;
 }
 
-@media (min-width: 500px){
+@media (min-width: 500px) {
   .card__img-watermark {
     right: 25px;
   }
